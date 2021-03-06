@@ -447,6 +447,12 @@ Home
                                         </h3>
                                     </div>
                                     <ul class="list-unstyled">
+
+                                        @if(!empty($package->roi))
+                                            <li style="font-size: 18px;">{{ $package->roi }}
+                                                <i class="fa fa-check"></i></li>
+                                        @endif
+
                                         @if(!empty($package->option1))
                                         <li style="font-size: 18px;">{{ $package->option1 }}
                                             <i class="fa fa-check"></i></li>
