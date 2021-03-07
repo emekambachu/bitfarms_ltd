@@ -4,7 +4,7 @@
 <h3>Dear {{ $name }},</h3>
 
 <p>
-    Your Investment was successful.<br>
+    Your crptocurrency Mining was successful.<br>
     Once your payment has been approved, your wallet would be funded.<br><br>
 </p>
 
@@ -12,6 +12,7 @@
 <ul>
     <li><strong>Investment ID:</strong> {{ $investment_id }}</li>
     <li><strong>Amount:</strong> ${{ $amount }}</li>
+    <li><strong>Cryptocurrency:</strong> {{ $cryptocurrency }}</li>
     <li><strong>Investment Package:</strong> {{ $investment_package }}</li>
     <li><strong>Status:</strong> {{ $status ? 'Approved' : 'Unapproved' }}</li>
 </ul>

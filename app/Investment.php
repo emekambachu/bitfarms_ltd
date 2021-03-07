@@ -16,6 +16,7 @@ class Investment extends Model
         'invest_id',
         'user_id',
         'amount',
+        'cryptocurrency',
         'is_approved',
     ];
 

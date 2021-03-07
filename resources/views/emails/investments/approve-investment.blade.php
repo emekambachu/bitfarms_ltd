@@ -1,13 +1,13 @@
 
-<img src="{{ asset('bitfarms_logo.png') }}" width="200">
+<img src="{{ asset('bitfarms_logo.png') }}" width="100">
 
 <h3>Hello {{ $name }}</h3>
 
 <p>
     @if($is_approved)
-    Your Investment of ${{ $amount }} has been Approved.<br>
+    Your Crypto Mining of ${{ $amount }} has been Approved.<br>
     @else
-    Your investment of ${{ $amount }} has been Cancelled.
+    Your Crypto Mining of ${{ $amount }} has been Cancelled.
     @endif
 </p>
 

@@ -1,5 +1,5 @@
 
-<img src="{{ asset('bitfarms_logo.png') }}" width="200">
+<img src="{{ asset('bitfarms_logo.png') }}" width="100">
 
 <h3>Dear {{ $name }},</h3>
 

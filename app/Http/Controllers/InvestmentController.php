@@ -88,6 +88,7 @@ class InvestmentController extends Controller
             'investment_package_id' => $package->id,
             'user_id' => Auth::user()->id,
             'amount' => $input['amount'],
+            'cryptocurrency' => $input['cryptocurrency'],
             'is_approved' => 0,
         ]);
 
@@ -97,6 +98,7 @@ class InvestmentController extends Controller
             'investment_id' => $investment->invest_id,
             'investment_package' => $investment->investmentPackage->name,
             'amount' => $investment->amount,
+            'cryptocurrency' => $investment->cryptocurrency,
             'status' => $investment->is_approved,
             'name' => Auth::user()->name,
             'email' => Auth::user()->email,
