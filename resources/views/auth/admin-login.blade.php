@@ -5,17 +5,32 @@
 @endsection
 
 @section('contents')
+    <div class="banner-area" id="banner-area" style="background-image:url({{ asset('header.jpg') }});">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col">
+                    <div class="banner-heading">
+                        <h2 class="banner-title">Admin Login</h2>
+                        <ol class="breadcrumb">
+                            <li><a href="{{ url('/') }}">Home</a></li>
+                            <li>Admin Login</li>
+                        </ol>
+                    </div>
+                </div>
+                <!-- Col end-->
+            </div>
+            <!-- Row end-->
+        </div>
+        <!-- Container end-->
+    </div>
 
-    <section class="main-container" id="main-container" style="background-color: #1D1D1D;">
+    <section class="main-container" id="main-container" style="background-color: #fffefe; margin-bottom: 100px;">
         <!-- container end-->
         <div class="gap-60"></div>
         <div class="ts-form" id="ts-form">
             <div class="container">
 
                 @include('includes.alerts')
-
-                <h2 class="column-title title-small">
-                    <span style="color: #FCAB10; font-weight: bold;">Admin Login</span></h2>
 
                 <div class="row">
                     <div class="col-lg-7 col-12">
