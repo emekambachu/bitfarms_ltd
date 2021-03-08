@@ -24,7 +24,7 @@
         <!-- Container end-->
     </div>
 
-    <section class="main-container" id="main-container" style="padding-top: 5px; margin-bottom: 200px;">
+    <section class="main-container" id="main-container" style="padding-top: 5px;">
         <div class="ts-price-box">
             <div class="container">
                 <div class="row text-center">
@@ -40,7 +40,7 @@
                             @foreach($packages as $package)
                                 <div class="single-price-box">
                                     <div class="pricing-plan" style="background-color: #ebf1ff; margin-bottom: 5px;">
-                                        <div class="pricing-header border-left" style="background-color: #FF8E00;">
+                                        <div class="pricing-header border-left" style="background-color: #2154CF;">
                                             <h2 class="plan-name">{{ $package->name }}</h2>
                                             <h3 class="plan-price">
                                                 @if(!empty($package->min))
@@ -55,8 +55,25 @@
                                             </h3>
                                         </div>
                                         <ul class="list-unstyled">
+
                                             @if(!empty($package->roi))
-                                                <li style="font-size: 18px;">{{ $package->roi }}</li>
+                                                <li style="font-size: 18px;">{{ $package->roi }}
+                                                    <i class="fa fa-check"></i></li>
+                                            @endif
+
+                                            @if(!empty($package->option1))
+                                                <li style="font-size: 18px;">{{ $package->option1 }}
+                                                    <i class="fa fa-check"></i></li>
+                                            @endif
+
+                                            @if(!empty($package->option2))
+                                                <li style="font-size: 18px;">{{ $package->option2 }}
+                                                    <i class="fa fa-check"></i></li>
+                                            @endif
+
+                                            @if(!empty($package->option3))
+                                                <li style="font-size: 18px;">{{ $package->option3 }}
+                                                    <i class="fa fa-check"></i></li>
                                             @endif
 
                                             @if(!empty($package->referral_bonus))
