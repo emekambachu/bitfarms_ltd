@@ -31,7 +31,7 @@
                 <div class="col-lg-12 col-12 about-desc">
                     <h2 class="column-title title-small"><span>1</span>
                         <span style="color: #0E608C; font-weight: bold;">General</span></h2>
-                    <p>The terms and conditions contained herein apply to the investment services of Bitfarms Limited investment company made available through its official website at www.Bitfarms Limited.co. All information made available to the investor/client pertaining to this Promotion, including information contained within websites of Bitfarms Limited, form a legal agreement between the investor/client and Bitfarms Limited.<br>
+                    <p>The terms and conditions contained herein apply to the investment services of Bitfarms Limited investment company made available through its official website at www.Bit-farms.ltd All information made available to the investor/client pertaining to this Promotion, including information contained within websites of Bitfarms Limited, form a legal agreement between the investor/client and Bitfarms Limited.<br>
                         By electing to participate in any of the investment businesses of Bitfarms Limited, you are indicating you agree to be bound by the terms and conditions contained herein and contained within website materials of Bitfarms Limited, coupled with any Client Agreement(s) executed.<br>
                         Bitfarms Limited reserves the right to amend these terms and conditions at any time. Such modifications shall become effective immediately at the time the amendment is executed and posted on the Bitfarms Limited website. Bitfarms Limited is not required to make announcements as to such amendments. </p>
                     <div class="gap-15"></div>

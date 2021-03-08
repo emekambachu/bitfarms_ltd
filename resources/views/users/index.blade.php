@@ -67,6 +67,7 @@
                     </div>
                 </div>
 
+                @if($recentInvestment)
                 <div class="center" id="timer">
                     <span>Countdown to Mining Completion</span>
                     <div id="days"></div>
@@ -74,6 +75,7 @@
                     <div id="minutes"></div>
                     <div id="seconds"></div>
                 </div>
+                @endif
 
             </div>
 

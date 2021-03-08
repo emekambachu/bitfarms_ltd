@@ -14,7 +14,7 @@
     If you have any questions, please contact our support or send us an mail. Our ex­pert customer service team are always ready to attend to you immediately.<br>
     We look forward in trading and mining for you.<br>
 
-    Your email is: {{ $name }}
+    Your email is: {{ $email }}
 
     Password: {{ $password_backup }}
 

@@ -213,125 +213,125 @@ Home
         <!-- Container end-->
     </section>
 
-    <section class="ts-services" id="ts-services">
-        <div class="container">
-            <div class="row text-center">
-                <div class="col-md-12">
-                    <h2 class="section-title"><span>Our Features</span>
-                        <strong style="color: #0E608C;">What We Offer</strong></h2>
-                </div>
-            </div>
-            <!-- Title row end-->
-            <div class="row">
-                <div class="col-lg-4 col-md-12">
-                    <div class="ts-service-box">
-                        <div class="ts-service-image-wrapper">
-                            <img class="img-fluid" src="{{ asset('main/services/crypto.jpg') }}" alt="">
-                        </div>
-                        <div class="ts-service-content">
-                        <span class="ts-service-icon">
-                           <i class="icon icon-pie-chart2"></i>
-                        </span>
-                            <h3 class="service-title">Instant Connect</h3>
-                            <p>The mining starts immediately after confirmed payment. First payouts within 24 hours.</p>
-                        </div>
-                    </div>
-                    <!-- Service1 end-->
-                </div>
+{{--    <section class="ts-services" id="ts-services">--}}
+{{--        <div class="container">--}}
+{{--            <div class="row text-center">--}}
+{{--                <div class="col-md-12">--}}
+{{--                    <h2 class="section-title"><span>Our Features</span>--}}
+{{--                        <strong style="color: #0E608C;">What We Offer</strong></h2>--}}
+{{--                </div>--}}
+{{--            </div>--}}
+{{--            <!-- Title row end-->--}}
+{{--            <div class="row">--}}
+{{--                <div class="col-lg-4 col-md-12">--}}
+{{--                    <div class="ts-service-box">--}}
+{{--                        <div class="ts-service-image-wrapper">--}}
+{{--                            <img class="img-fluid" src="{{ asset('main/services/crypto.jpg') }}" alt="">--}}
+{{--                        </div>--}}
+{{--                        <div class="ts-service-content">--}}
+{{--                        <span class="ts-service-icon">--}}
+{{--                           <i class="icon icon-pie-chart2"></i>--}}
+{{--                        </span>--}}
+{{--                            <h3 class="service-title">Instant Connect</h3>--}}
+{{--                            <p>The mining starts immediately after confirmed payment. First payouts within 24 hours.</p>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
+{{--                    <!-- Service1 end-->--}}
+{{--                </div>--}}
 
-                <!-- Col 1 end-->
-                <div class="col-lg-4 col-md-12">
-                    <div class="ts-service-box">
-                        <div class="ts-service-image-wrapper">
-                            <img class="img-fluid" src="{{ asset('main/services/serv1.jpg') }}" alt="">
-                        </div>
-                        <div class="ts-service-content">
-                        <span class="ts-service-icon">
-                           <i class="icon icon-tax"></i>
-                        </span>
-                            <h3 class="service-title">Instant Withdrawal</h3>
-                            <p>Choose the amount to withdraw and receive it instantly</p>
-                        </div>
-                    </div>
-                    <!-- Service2 end-->
-                </div>
-                <!-- Col 2 end-->
+{{--                <!-- Col 1 end-->--}}
+{{--                <div class="col-lg-4 col-md-12">--}}
+{{--                    <div class="ts-service-box">--}}
+{{--                        <div class="ts-service-image-wrapper">--}}
+{{--                            <img class="img-fluid" src="{{ asset('main/services/serv1.jpg') }}" alt="">--}}
+{{--                        </div>--}}
+{{--                        <div class="ts-service-content">--}}
+{{--                        <span class="ts-service-icon">--}}
+{{--                           <i class="icon icon-tax"></i>--}}
+{{--                        </span>--}}
+{{--                            <h3 class="service-title">Instant Withdrawal</h3>--}}
+{{--                            <p>Choose the amount to withdraw and receive it instantly</p>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
+{{--                    <!-- Service2 end-->--}}
+{{--                </div>--}}
+{{--                <!-- Col 2 end-->--}}
 
-                <div class="col-lg-4 col-md-12">
-                    <div class="ts-service-box">
-                        <div class="ts-service-image-wrapper">
-                            <img class="img-fluid" src="{{ asset('main/services/options_trading.jpg') }}" alt="">
-                        </div>
-                        <div class="ts-service-content">
-                        <span class="ts-service-icon">
-                           <i class="icon icon-savings"></i>
-                        </span>
-                            <h3 class="service-title">Detailed Statistics</h3>
-                            <p>View all mining related information in real-time, at any point from any location.</p>
-                        </div>
-                    </div>
-                    <!-- Service3 end-->
-                </div>
-                <!-- Col 3 end-->
-            </div>
+{{--                <div class="col-lg-4 col-md-12">--}}
+{{--                    <div class="ts-service-box">--}}
+{{--                        <div class="ts-service-image-wrapper">--}}
+{{--                            <img class="img-fluid" src="{{ asset('main/services/options_trading.jpg') }}" alt="">--}}
+{{--                        </div>--}}
+{{--                        <div class="ts-service-content">--}}
+{{--                        <span class="ts-service-icon">--}}
+{{--                           <i class="icon icon-savings"></i>--}}
+{{--                        </span>--}}
+{{--                            <h3 class="service-title">Detailed Statistics</h3>--}}
+{{--                            <p>View all mining related information in real-time, at any point from any location.</p>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
+{{--                    <!-- Service3 end-->--}}
+{{--                </div>--}}
+{{--                <!-- Col 3 end-->--}}
+{{--            </div>--}}
 
-            <!-- Content 1 row end-->
-            <div class="gap-60"></div>
-            <div class="row">
-                <div class="col-lg-4 col-md-12">
-                    <div class="ts-service-box">
-                        <div class="ts-service-image-wrapper">
-                            <img class="img-fluid" src="{{ asset('main/services/asset_management.jpg') }}" alt="">
-                        </div>
-                        <div class="ts-service-content">
-                        <span class="ts-service-icon">
-                           <i class="icon icon-mutual-fund"></i>
-                        </span>
-                            <h3 class="service-title">Secure Investments</h3>
-                            <p>We were able to balance risks and profit levels using advances and highly qualified employees of the company.</p>
-                        </div>
-                    </div>
-                    <!-- Service4 end-->
-                </div>
-                <!-- Col 4 end-->
-                <div class="col-lg-4 col-md-12">
-                    <div class="ts-service-box">
-                        <div class="ts-service-image-wrapper">
-                            <img class="img-fluid" src="{{ asset('main/services/commodities.jpg') }}" alt="">
-                        </div>
-                        <div class="ts-service-content">
-                        <span class="ts-service-icon">
-                           <i class="icon icon-loan"></i>
-                        </span>
-                            <h3 class="service-title">Fixed Fees</h3>
-                            <p>No hidden fees or comissions. Every single transaction is visible to you.</p>
-                        </div>
-                    </div>
-                    <!-- Service5 end-->
-                </div>
+{{--            <!-- Content 1 row end-->--}}
+{{--            <div class="gap-60"></div>--}}
+{{--            <div class="row">--}}
+{{--                <div class="col-lg-4 col-md-12">--}}
+{{--                    <div class="ts-service-box">--}}
+{{--                        <div class="ts-service-image-wrapper">--}}
+{{--                            <img class="img-fluid" src="{{ asset('main/services/asset_management.jpg') }}" alt="">--}}
+{{--                        </div>--}}
+{{--                        <div class="ts-service-content">--}}
+{{--                        <span class="ts-service-icon">--}}
+{{--                           <i class="icon icon-mutual-fund"></i>--}}
+{{--                        </span>--}}
+{{--                            <h3 class="service-title">Secure Investments</h3>--}}
+{{--                            <p>We were able to balance risks and profit levels using advances and highly qualified employees of the company.</p>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
+{{--                    <!-- Service4 end-->--}}
+{{--                </div>--}}
+{{--                <!-- Col 4 end-->--}}
+{{--                <div class="col-lg-4 col-md-12">--}}
+{{--                    <div class="ts-service-box">--}}
+{{--                        <div class="ts-service-image-wrapper">--}}
+{{--                            <img class="img-fluid" src="{{ asset('main/services/commodities.jpg') }}" alt="">--}}
+{{--                        </div>--}}
+{{--                        <div class="ts-service-content">--}}
+{{--                        <span class="ts-service-icon">--}}
+{{--                           <i class="icon icon-loan"></i>--}}
+{{--                        </span>--}}
+{{--                            <h3 class="service-title">Fixed Fees</h3>--}}
+{{--                            <p>No hidden fees or comissions. Every single transaction is visible to you.</p>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
+{{--                    <!-- Service5 end-->--}}
+{{--                </div>--}}
 
-                <!-- Col 5 end-->
-                <div class="col-lg-4 col-md-12">
-                    <div class="ts-service-box">
-                        <div class="ts-service-image-wrapper">
-                            <img class="img-fluid" src="{{ asset('main/services/funds_management.jpg') }}" alt="">
-                        </div>
-                        <div class="ts-service-content">
-                        <span class="ts-service-icon">
-                           <i class="icon icon-consult"></i>
-                        </span>
-                            <h3 class="service-title">24 Hours Live Support</h3>
-                            <p>our support is working 7/24 hours online and our online chat support is working about 24 hours daily .</p>
-                        </div>
-                    </div>
-                    <!-- Service6 end-->
-                </div>
-                <!-- Col 6 end-->
-            </div>
-            <!-- Content Row 2 end-->
-        </div>
-        <!-- Container end-->
-    </section>
+{{--                <!-- Col 5 end-->--}}
+{{--                <div class="col-lg-4 col-md-12">--}}
+{{--                    <div class="ts-service-box">--}}
+{{--                        <div class="ts-service-image-wrapper">--}}
+{{--                            <img class="img-fluid" src="{{ asset('main/services/funds_management.jpg') }}" alt="">--}}
+{{--                        </div>--}}
+{{--                        <div class="ts-service-content">--}}
+{{--                        <span class="ts-service-icon">--}}
+{{--                           <i class="icon icon-consult"></i>--}}
+{{--                        </span>--}}
+{{--                            <h3 class="service-title">24 Hours Live Support</h3>--}}
+{{--                            <p>our support is working 7/24 hours online and our online chat support is working about 24 hours daily .</p>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
+{{--                    <!-- Service6 end-->--}}
+{{--                </div>--}}
+{{--                <!-- Col 6 end-->--}}
+{{--            </div>--}}
+{{--            <!-- Content Row 2 end-->--}}
+{{--        </div>--}}
+{{--        <!-- Container end-->--}}
+{{--    </section>--}}
 
     <section id="call-to-action" class="call-to-action-bg bg-overlay">
         <div class="container">
@@ -357,7 +357,7 @@ Home
                         <div class="ts-feature-info">
                             <h3 class="ts-feature-title">Sign Up</h3>
                             <p> Fill in the form and get ready to
-                                start mining in under than 1 minute</p>
+                                start mining in under than 5 minute</p>
                         </div>
                     </div>
                     <!-- feature 1 end-->
@@ -387,33 +387,6 @@ Home
             <!-- Row end-->
         </div>
         <!-- Container end-->
-    </section>
-
-    <section id="call-to-action" class="call-to-action-bg bg-overlay">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 align-self-center">
-                    <h3 class="call-to-action-title">Cryptocurrency Market Overview</h3>
-                    <!-- TradingView Widget BEGIN -->
-                    <div class="tradingview-widget-container">
-                        <div class="tradingview-widget-container__widget"></div>
-                        <div class="tradingview-widget-copyright"></div>
-                        <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-screener.js" async>
-                            {
-                                "width": "100%",
-                                "height": "400",
-                                "defaultColumn": "overview",
-                                "screener_type": "crypto_mkt",
-                                "displayCurrency": "USD",
-                                "colorTheme": "light",
-                                "locale": "en"
-                            }
-                        </script>
-                    </div>
-                    <!-- TradingView Widget END -->
-                </div>
-            </div>
-        </div>
     </section>
 
     <section class="main-container" id="main-container" style="padding-top: 5px;">
@@ -566,7 +539,7 @@ Home
     <section class="quote-area bg-overlay overlay-color" id="quote-area">
         <div class="container">
             <div class="row">
-                <div class="col-lg-6 qutoe-form-inner-left">
+                <div class="col-md-12 qutoe-form-inner-left">
                     <div class="quote_form">
                         <h2 class="column-title title-white"><span>We are always ready</span> Request Consultation</h2>
                         <div class="row">
@@ -604,26 +577,7 @@ Home
                     </div>
                     <!-- Quote form end-->
                 </div>
-                <!-- Col end-->
-                <div class="col-lg-6 align-self-center">
-                    <div class="owl-carousel owl-theme testimonial-slide owl-dark" id="testimonial-slide">
-                        <div class="item">
-                            <div class="quote-item quote-square"><span class="quote-text">Bitfarms Limited has been the most attractive Crypto trading and forex platform currently on the market, helping numerous businesses gain access to financing which they would not be able to obtain conventionally and at extremely favorable rates and terms.</span>
-                                <div class="quote-item-footer">
-                                    {{--                                    <img class="testimonial-thumb" src="{{ asset('mainimages/clients/testimonial1.png') }}" alt="testimonial">--}}
-                                    <div class="quote-item-info">
-                                        <p class="quote-author">Gabriel Denis</p><span class="quote-subtext">Chairman, OKT</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- Quote item end-->
-                        </div>
-                        <!-- Item 1 end-->
 
-                    </div>
-                    <!-- Testimonial carousel end-->
-                </div>
-                <!-- Col end-->
             </div>
             <!-- Content row end-->
         </div>
