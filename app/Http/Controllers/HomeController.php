@@ -57,6 +57,7 @@ class HomeController extends Controller
         $data = [
             'name' => $input['name'],
             'email' => $input['email'],
+            'subject' => $input['subject'] ?? null,
             'email_message' => $input['email_message'],
         ];
 

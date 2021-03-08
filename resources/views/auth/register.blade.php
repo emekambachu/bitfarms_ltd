@@ -146,7 +146,7 @@
                                 <div class="col-md-4">
                                     <div class="form-group">
                                         <label>State</label>
-                                        <select class="form-control" id="state" name="state"></select>
+                                        <select class="form-control" id="state" name="state" required></select>
                                         @error('state')
                                         <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>

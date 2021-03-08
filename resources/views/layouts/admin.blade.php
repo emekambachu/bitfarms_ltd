@@ -63,6 +63,8 @@
                             <i class="las la-money iq-arrow-left"></i><span>Withdrawal Requests</span></a></li>
                     <li><a href="{{ route('investments-packages.index') }}" class="iq-waves-effect">
                         <i class="las la-gear iq-arrow-left"></i><span>Investment Packages</span></a></li>
+                    <li><a href="{{ route('admin.account-settings') }}" class="iq-waves-effect">
+                            <i class="las la-sign-out iq-arrow-left"></i><span>Account Settings</span></a></li>
                     <li><a href="{{ route('admin-logout') }}" class="iq-waves-effect">
                         <i class="las la-sign-out iq-arrow-left"></i><span>Logout</span></a></li>
                 </ul>
@@ -92,11 +94,12 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav ml-auto navbar-list">
 
-                        <li><a style="font-size: 12px; margin-top: 20px;" href="{{ route('users-dashboard') }}"><span>Dashboard</span></a></li>
+                        <li><a style="font-size: 12px; margin-top: 20px;" href="{{ route('admin-dashboard') }}"><span>Dashboard</span></a></li>
                         <li><a style="font-size: 12px; margin-top: 20px;" href="{{ route('manage-users') }}"><span>Manage Users</span></a></li>
                         <li><a style="font-size: 12px; margin-top: 20px;" href="{{ route('manage-investments') }}"><span>Manage Investments</span></a></li>
                         <li><a style="font-size: 12px; margin-top: 20px;" href="{{ route('withdrawal-requests') }}"><span>Withdrawal Requests</span></a></li>
                         <li><a style="font-size: 12px; margin-top: 20px;" href="{{ route('investments-packages.index') }}"><span>Investment Packages</span></a></li>
+                        <li><a style="font-size: 12px; margin-top: 20px;" href="{{ route('admin.account-settings') }}"><span>Account Settings</span></a></li>
                         <li><a style="font-size: 12px; margin-top: 20px;" href="{{ route('admin-logout') }}"><span>Logout</span></a></li>
 
                         <li id="google_translate_element" class="nav-item"></li>

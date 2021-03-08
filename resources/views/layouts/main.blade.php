@@ -64,7 +64,7 @@
                             <li><span class="info-icon">
                                     <i class="icon icon-phone3"></i></span>
                                 <div class="info-wrapper">
-                                    <p class="info-title">+1 (401) 217-9879</p>
+                                    <p class="info-title">+1 (323) 641-5051</p>
                                 </div>
                             </li>
                             <li><span class="info-icon">
@@ -171,14 +171,15 @@
                     <div class="col-lg-4 footer-box"><i class="icon icon-map-marker2"></i>
                         <div class="footer-box-content">
                             <h3>Head Office</h3>
-                            <p>1010 Avenue, NY 90001, USA</p>
+                            <p>555 West 5th street, 35th Floor,
+                                Los Angeles, California</p>
                         </div>
                     </div>
                     <!-- Box 1 end-->
                     <div class="col-lg-4 footer-box"><i class="icon icon-phone3"></i>
                         <div class="footer-box-content">
                             <h3>Call Us</h3>
-                            <p>+1 (401) 217-9879</p>
+                            <p>+1 (323) 641-5051</p>
                         </div>
                     </div>
                     <!-- Box 2 end-->

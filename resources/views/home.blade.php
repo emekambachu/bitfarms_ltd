@@ -542,18 +542,21 @@ Home
                 <div class="col-md-12 qutoe-form-inner-left">
                     <div class="quote_form">
                         <h2 class="column-title title-white"><span>We are always ready</span> Request Consultation</h2>
-                        <div class="row">
-                            <div class="col-lg-6">
-                                <div class="form-group">
-                                    <input class="form-control" id="name" name="name" placeholder="Full Name" required="">
+                        <form method="post" action="{{ url('contact/send') }}">
+                            @csrf
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <div class="form-group">
+                                        <input class="form-control" id="name" name="name" placeholder="Full Name" required="">
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="form-group">
+                                        <input class="form-control" id="email" name="email" placeholder="Email Address" required="">
+                                    </div>
                                 </div>
                             </div>
-                            <div class="col-lg-6">
-                                <div class="form-group">
-                                    <input class="form-control" id="email" name="email" placeholder="Email Address" required="">
-                                </div>
-                            </div>
-                        </div>
+                        </form>
                         <!-- Row 1 end-->
                         <div class="row">
                             <div class="col-lg-12">
