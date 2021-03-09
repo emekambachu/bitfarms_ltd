@@ -6,7 +6,7 @@
 <p>
     @if($is_approved)
         Your Withdrawal of ${{ $amount }} has been Approved.<br>
-        You will receive payment in 24 hours
+        You will receive payment within an hour.
     @else
         Your Withdrawal of ${{ $amount }} has been Cancelled.
     @endif
