@@ -67,14 +67,22 @@
                     </div>
                 </div>
 
+{{--                {{ $miningApprovedTime.' < '.$stopMiningTime.' now:'.$now }}--}}
+
                 @if($recentInvestment)
-                <div class="center" id="timer">
-                    <span>Countdown to Mining Completion</span>
-                    <div id="days"></div>
-                    <div id="hours"></div>
-                    <div id="minutes"></div>
-                    <div id="seconds"></div>
-                </div>
+                    @if(($miningApprovedTime < $stopMiningTime) && ($stopMiningTime > $now))
+                    <div class="center" id="timer">
+                        <span>Countdown to Mining Completion</span>
+                        <div id="days"></div>
+                        <div id="hours"></div>
+                        <div id="minutes"></div>
+                        <div id="seconds"></div>
+                    </div>
+                    @else
+                    <div class="center" id="timer">
+                        <span>Mining completed for {{ $recentInvestment->investmentPackage->name.', '.$recentInvestment->investmentPackage->roi.' ($'.$recentInvestment->amount.')' }}</span>
+                    </div>
+                    @endif
                 @endif
 
             </div>
@@ -210,7 +218,7 @@
                                     </div>
                                     <div class="t-name">
                                         <h4>{{ $trans->description }}</h4>
-                                        <p class="meta-date">{{ \Carbon\Carbon::parse($trans->created_at)->format('j F, Y') }}</p>
+                                        <p class="meta-date">{{ \Carbon\Carbon::parse($trans->updated_at)->format('j F, Y') }}</p>
                                     </div>
 
                                 </div>
@@ -275,7 +283,7 @@
                                         </td>
                                         <td>${{ number_format($invest->amount) }}</td>
                                         <td>{{ $invest->cryptocurrency }}</td>
-                                        <td>{{ $invest->created_at->format('d M Y') }}</td>
+                                        <td>{{ $invest->updated_at->format('j F, Y') }}</td>
                                         <td>
                                             @if($invest->is_approved)
                                                 <span class="badge badge-success">Approved</span>
@@ -311,7 +319,7 @@
         function makeTimer() {
 
             //		var endTime = new Date("29 April 2018 9:56:00 GMT+01:00");
-            var endTime = new Date("{{ $stop_date }} GMT+01:00");
+            var endTime = new Date("{{ $stopMiningTime }} GMT+01:00");
             endTime = (Date.parse(endTime) / 1000);
 
             var now = new Date();

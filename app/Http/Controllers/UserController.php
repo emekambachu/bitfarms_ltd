@@ -7,6 +7,7 @@ use App\InvestmentPackage;
 use App\Transaction;
 use App\User;
 use App\Withdrawal;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\File;
@@ -42,29 +43,36 @@ class UserController extends Controller
             ['is_approved', true],
         ])->sum('amount');
 
+        // investment query object
         $recentInvestment = Investment::where([
             ['user_id', Auth::user()->id],
             ['is_approved', true],
-        ])->orderBy('created_at', 'desc')->first();
+        ])->orderBy('updated_at', 'desc')->first();
 
         // if there is a recent investment, get the date created and number of hours it takes to complete the investment
         if($recentInvestment){
-            $stop_date = date('F d, Y h:i:s', strtotime($recentInvestment->created_at . ' +'.$recentInvestment->investmentPackage->days_turnover.' hours'));
+            // add the given turnover time to last updated_at or last time an investment was created
+            $stopMiningTime = date('F d, Y h:i:s', strtotime($recentInvestment->updated_at . ' +'.$recentInvestment->investmentPackage->days_turnover.' hours'));
+            // convert mining approved investment updated_at
+            $miningApprovedTime = date('F d, Y h:i:s', strtotime($recentInvestment->updated_at));
+
+            // get current time
+            $now = date('F d, Y h:i:s', strtotime(Carbon::now()));
         }else{
-            $stop_date = '';
+            $stopMiningTime = '';
+            $miningApprovedTime = '';
+            $now = '';
         }
 
         $total_withdrawals = Withdrawal::where([
-
             [ 'user_id', Auth::user()->id],
             [ 'is_approved', 1],
-
         ])->orderBy('created_at', 'desc')->get();
 
         $transactions = Transaction::where('user_id', $user->id)->orderBy('created_at', 'desc')->limit(6)->get();
 
         return view('users.index',
-            compact('user', 'investments', 'totalInvestments', 'recentInvestment', 'total_withdrawals', 'transactions', 'stop_date'));
+            compact('user', 'investments', 'totalInvestments', 'recentInvestment', 'total_withdrawals', 'transactions', 'stopMiningTime', 'miningApprovedTime', 'now'));
     }
 
     public function withdrawal(){

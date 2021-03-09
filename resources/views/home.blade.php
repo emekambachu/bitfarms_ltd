@@ -555,7 +555,7 @@ Home
                                     </div>
                                 </div>
                             </div>
-                        </form>
+
                         <!-- Row 1 end-->
                         <div class="row">
                             <div class="col-lg-12">
@@ -576,6 +576,7 @@ Home
                         <div class="form-group text-right mb-0">
                             <input class="button btn btn-primary" type="submit" value="Send Message">
                         </div>
+                        </form>
                     </div>
                     <!-- Quote form end-->
                 </div>
