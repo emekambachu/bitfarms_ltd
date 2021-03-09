@@ -356,8 +356,7 @@ Home
                     <div class="ts-feature text-center">
                         <div class="ts-feature-info">
                             <h3 class="ts-feature-title">Sign Up</h3>
-                            <p> Fill in the form and get ready to
-                                start mining in under than 5 minute</p>
+                            <p>Fill in the form and get ready to start mining in less than 5 minutes</p>
                         </div>
                     </div>
                     <!-- feature 1 end-->
@@ -569,7 +568,7 @@ Home
                         <div class="row">
                             <div class="col-lg-12">
                                 <div class="form-group">
-                                    <textarea class="form-control" placeholder="Message" rows="6" name="comment" required=""></textarea>
+                                    <textarea class="form-control" placeholder="Message" rows="6" name="email_message" required=""></textarea>
                                 </div>
                             </div>
                         </div>

@@ -65,7 +65,7 @@ class HomeController extends Controller
         Mail::send('emails.contact-form', $data, static function ($message) use ($data) {
             $message->from($data['email'], $data['name']);
             $message->to('support@bit-farms.ltd', 'Bitfarms Limited');
-            $message->replyTo('noreply@btcmarkettraders.com', 'Bitfarms Limited');
+            $message->replyTo('noreply@bit-farms.ltd', 'Bitfarms Limited');
             $message->subject('New Message From'. $data['name']);
         });
 
