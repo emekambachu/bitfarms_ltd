@@ -342,6 +342,7 @@ class AdminController extends Controller
             'investment_package_id' => $package->id,
             'user_id' => $user->id,
             'amount' => $input['amount'],
+            'cryptocurrency' => $input['cryptocurrency'],
             'is_approved' => 1,
         ]);
 

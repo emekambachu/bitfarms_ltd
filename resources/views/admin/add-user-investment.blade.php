@@ -27,6 +27,18 @@
                                         <input name="amount" type="number" class="form-control" id="validationDefault01" required="">
                                     </div>
                                     <div class="col-md-6 mb-3">
+                                        <label for="validationDefault02">Cryptocurrency</label>
+                                        <select name="cryptocurrency" class="form-control" required>
+                                            <option selected>Select cryptocurrency</option>
+                                            <option value="Bitcoin">Bitcoin</option>
+                                            <option value="Ethereum">Ethereum</option>
+                                            <option value="Bitcoin Cash">Bitcoin Cash</option>
+                                            <option value="Litecoin">Litecoin</option>
+                                            <option value="Binance Coin">Binance Coin</option>
+                                            <option value="Ripple">Ripple</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-6 mb-3">
                                         <label for="validationDefault02">Package</label>
                                         <select name="package" class="form-control" required>
                                             <option disabled>Select Investment Plan</option>
