@@ -38,7 +38,7 @@
                 <div class="row">
                     <div class="col-lg-7 col-12">
                         <p class="heading--desc">Hello <strong>{{ Session::get('name') }}</strong><br>
-                            Thanks for taking your time to register on our trading platform. Your account has been activated, you can choose any of our investments packages so we will commence trading on your account immediately.<br>
+                            Thanks for taking your time to register on our crypto mining platform. Your account will be verified and activated by our security team in a moment, you can choose any of our mining packages so we can commence mining on your account immediately.<br>
                             <a href="{{ route('login') }}"><strong>Login</strong></a> to start investing
                         </p>
                     </div>

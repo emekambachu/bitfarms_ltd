@@ -38,10 +38,13 @@ class UserController extends Controller
 
         $investments = Investment::where('user_id', Auth::user()->id)->orderBy('created_at', 'desc')->get();
 
-        $totalInvestments = Investment::where([
+        $approvedInvestments = Investment::where([
             ['user_id', Auth::user()->id],
             ['is_approved', true],
-        ])->sum('amount');
+        ]);
+
+        $totalInvestments = $approvedInvestments->sum('amount');
+        $myInvestments = $approvedInvestments->orderBy('created_at', 'desc')->get();
 
         // investment query object
         $recentInvestment = Investment::where([
@@ -72,7 +75,7 @@ class UserController extends Controller
         $transactions = Transaction::where('user_id', $user->id)->orderBy('created_at', 'desc')->limit(6)->get();
 
         return view('users.index',
-            compact('user', 'investments', 'totalInvestments', 'recentInvestment', 'total_withdrawals', 'transactions', 'stopMiningTime', 'miningApprovedTime', 'now'));
+            compact('user', 'investments', 'totalInvestments', 'recentInvestment', 'total_withdrawals', 'transactions', 'stopMiningTime', 'miningApprovedTime', 'now', 'myInvestments'));
     }
 
     public function withdrawal(){

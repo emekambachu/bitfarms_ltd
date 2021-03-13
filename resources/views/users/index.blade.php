@@ -44,6 +44,30 @@
             font-size: 50px;
             color: #abcd58;
         }
+
+        .timerDisplay{
+            padding: 15px;
+            width: auto;
+            border-radius: 8px;
+            display: inline-block;
+            font-size: 40px;
+            color: #db4844;
+        }
+
+        .timerContainer{
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            background-color: #f0efef;
+            margin-top: 8px;
+        }
+
+        .miningInfo{
+            font-size: 16px;
+        }
+
+
     </style>
 @endsection
 
@@ -67,23 +91,67 @@
                     </div>
                 </div>
 
+                @foreach($myInvestments as $inv)
+                    <div class="timerContainer">
+
+                        <p class="miningInfo">
+                            <strong>Mining:</strong> ${{ $inv->amount }}<br>
+                            <strong>Package:</strong> {{ $inv->investmentPackage->name }}<br>
+                            <strong>ROI:</strong> {{ $inv->investmentPackage->roi }}<br>
+                        </p>
+
+                        <p class="timerDisplay" id="demo{{ $inv->id }}"></p>
+
+                        <script type="text/javascript">
+                            var countDownDate = new Date("{{ date('F d, Y h:i:s', strtotime($inv->updated_at . ' +'.$inv->investmentPackage->days_turnover.' hours')) }}").getTime();
+
+                            // Update the count down every 1 second
+                            var x = setInterval(function() {
+
+                                // Get today's date and time
+                                var now = new Date().getTime();
+
+                                // Find the distance between now and the count down date
+                                var distance = countDownDate - now;
+
+                                // Time calculations for days, hours, minutes and seconds
+                                var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                                var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                                var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                                var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+                                // Output the result in an element with id="demo"
+                                document.getElementById("demo{{ $inv->id }}").innerHTML = days + "d " + hours + "h "
+                                    + minutes + "m " + seconds + "s ";
+
+                                // If the count down is over, write some text
+                                if (distance < 0) {
+                                    clearInterval(x);
+                                    document.getElementById("demo{{ $inv->id }}").innerHTML = "EXPIRED";
+                                }
+                            }, 1000);
+                        </script>
+
+                    </div>
+                @endforeach
+
 {{--                {{ $miningApprovedTime.' < '.$stopMiningTime.' now:'.$now }}--}}
 
-                @if($recentInvestment)
-                    @if(($miningApprovedTime < $stopMiningTime) && ($stopMiningTime > $now))
-                    <div class="center" id="timer">
-                        <span>Countdown to Mining Completion</span>
-                        <div id="days"></div>
-                        <div id="hours"></div>
-                        <div id="minutes"></div>
-                        <div id="seconds"></div>
-                    </div>
-                    @else
-                    <div class="center" id="timer">
-                        <span>Mining completed for {{ $recentInvestment->investmentPackage->name.', '.$recentInvestment->investmentPackage->roi.' ($'.$recentInvestment->amount.')' }}</span>
-                    </div>
-                    @endif
-                @endif
+{{--                @if($recentInvestment)--}}
+{{--                    @if(($miningApprovedTime < $stopMiningTime) && ($stopMiningTime > $now))--}}
+{{--                    <div class="center" id="timer">--}}
+{{--                        <span>Countdown to Mining Completion</span>--}}
+{{--                        <div id="days"></div>--}}
+{{--                        <div id="hours"></div>--}}
+{{--                        <div id="minutes"></div>--}}
+{{--                        <div id="seconds"></div>--}}
+{{--                    </div>--}}
+{{--                    @else--}}
+{{--                    <div class="center" id="timer">--}}
+{{--                        <span>Mining completed for {{ $recentInvestment->investmentPackage->name.', '.$recentInvestment->investmentPackage->roi.' ($'.$recentInvestment->amount.')' }}</span>--}}
+{{--                    </div>--}}
+{{--                    @endif--}}
+{{--                @endif--}}
 
             </div>
 
@@ -316,33 +384,65 @@
 
 @section('bottom-assets')
     <script>
-        function makeTimer() {
+        function makeTimer(id, stopMiningTime){
+            // Set the date we're counting down to
+            var countDownDate = new Date(stopMiningTime).getTime();
 
-            //		var endTime = new Date("29 April 2018 9:56:00 GMT+01:00");
-            var endTime = new Date("{{ $stopMiningTime }} GMT+01:00");
-            endTime = (Date.parse(endTime) / 1000);
+            // Update the count down every 1 second
+            var x = setInterval(function() {
 
-            var now = new Date();
-            now = (Date.parse(now) / 1000);
+                // Get today's date and time
+                var now = new Date().getTime();
 
-            var timeLeft = endTime - now;
+                // Find the distance between now and the count down date
+                var distance = countDownDate - now;
 
-            var days = Math.floor(timeLeft / 86400);
-            var hours = Math.floor((timeLeft - (days * 86400)) / 3600);
-            var minutes = Math.floor((timeLeft - (days * 86400) - (hours * 3600 )) / 60);
-            var seconds = Math.floor((timeLeft - (days * 86400) - (hours * 3600) - (minutes * 60)));
+                // Time calculations for days, hours, minutes and seconds
+                var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                var seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-            if (hours < "10") { hours = "0" + hours; }
-            if (minutes < "10") { minutes = "0" + minutes; }
-            if (seconds < "10") { seconds = "0" + seconds; }
+                // Output the result in an element with id="demo"
+                document.getElementById("demo"+id).innerHTML = days + "d " + hours + "h "
+                    + minutes + "m " + seconds + "s ";
 
-            $("#days").html(days + "<span>Days</span>");
-            $("#hours").html(hours + "<span>Hours</span>");
-            $("#minutes").html(minutes + "<span>Minutes</span>");
-            $("#seconds").html(seconds + "<span>Seconds</span>");
-
+                // If the count down is over, write some text
+                if (distance < 0) {
+                    clearInterval(x);
+                    document.getElementById("demo").innerHTML = "EXPIRED";
+                }
+            }, 1000);
         }
-
-        setInterval(function() { makeTimer(); }, 1000);
     </script>
+{{--    <script>--}}
+{{--        function makeTimer(stopMiningTime) {--}}
+
+{{--            //		var endTime = new Date("29 April 2018 9:56:00 GMT+01:00");--}}
+{{--            var endTime = new Date(stopMiningTime+" GMT+01:00");--}}
+{{--            endTime = (Date.parse(endTime) / 1000);--}}
+
+{{--            var now = new Date();--}}
+{{--            now = (Date.parse(now) / 1000);--}}
+
+{{--            var timeLeft = endTime - now;--}}
+
+{{--            var days = Math.floor(timeLeft / 86400);--}}
+{{--            var hours = Math.floor((timeLeft - (days * 86400)) / 3600);--}}
+{{--            var minutes = Math.floor((timeLeft - (days * 86400) - (hours * 3600 )) / 60);--}}
+{{--            var seconds = Math.floor((timeLeft - (days * 86400) - (hours * 3600) - (minutes * 60)));--}}
+
+{{--            if (hours < "10") { hours = "0" + hours; }--}}
+{{--            if (minutes < "10") { minutes = "0" + minutes; }--}}
+{{--            if (seconds < "10") { seconds = "0" + seconds; }--}}
+
+{{--            $("#days").html(days + "<span>Days</span>");--}}
+{{--            $("#hours").html(hours + "<span>Hours</span>");--}}
+{{--            $("#minutes").html(minutes + "<span>Minutes</span>");--}}
+{{--            $("#seconds").html(seconds + "<span>Seconds</span>");--}}
+
+{{--        }--}}
+
+{{--        setInterval(function() { makeTimer(); }, 1000);--}}
+{{--    </script>--}}
 @endsection
