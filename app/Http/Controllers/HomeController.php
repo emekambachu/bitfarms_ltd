@@ -70,7 +70,7 @@ class HomeController extends Controller
         });
 
         Session::flash('success', 'Message Sent');
-        return redirect()->back();
+        return redirect('contact');
     }
 
     public function home(){

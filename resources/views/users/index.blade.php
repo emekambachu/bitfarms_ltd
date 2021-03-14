@@ -91,50 +91,102 @@
                     </div>
                 </div>
 
-                @foreach($myInvestments as $inv)
+{{--                <script>--}}
+{{--                    // Set the date we're counting down to--}}
+{{--                    var countdowns = [--}}
+{{--                        @foreach($myInvestments as $inv)--}}
+{{--                        {--}}
+{{--                            id: {{ $inv->id }},--}}
+{{--                            date: new Date("{{ date('F d, Y h:i:s', strtotime($inv->updated_at . ' +'.$inv->investmentPackage->days_turnover.' hours')) }}").getTime()--}}
+{{--                        }--}}
+{{--                        @endforeach--}}
+{{--                    ];--}}
 
-                    <script type="text/javascript">
-                        var countDownDate = new Date("{{ date('F d, Y h:i:s', strtotime($inv->updated_at . ' +'.$inv->investmentPackage->days_turnover.' hours')) }}").getTime();
+{{--                    // Update the count down every 1 second--}}
+{{--                    var timer = setInterval(function() {--}}
+{{--                        // Get todays date and time--}}
+{{--                        var now = Date.now();--}}
 
-                        // Update the count down every 1 second
-                        var x = setInterval(function() {
+{{--                        var index = countdowns.length - 1;--}}
 
-                            // Get today's date and time
-                            var now = new Date().getTime();
+{{--                        // we have to loop backwards since we will be removing--}}
+{{--                        // countdowns when they are finished--}}
+{{--                        while(index >= 0) {--}}
+{{--                            var countdown = countdowns[index];--}}
 
-                            // Find the distance between now and the count down date
-                            var distance = countDownDate - now;
+{{--                            // Find the distance between now and the count down date--}}
+{{--                            var distance = countdown.date - now;--}}
 
-                            // Time calculations for days, hours, minutes and seconds
-                            var days = Math.floor(distance / (1000 * 60 * 60 * 24));
-                            var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-                            var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-                            var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+{{--                            // Time calculations for days, hours, minutes and seconds--}}
+{{--                            var days = Math.floor(distance / (1000 * 60 * 60 * 24));--}}
+{{--                            var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));--}}
+{{--                            var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));--}}
+{{--                            var seconds = Math.floor((distance % (1000 * 60)) / 1000);--}}
 
-                            // Output the result in an element with id="demo"
-                            document.getElementById("demo{{ $inv->id }}").innerHTML = days + "d " + hours + "h "
-                                + minutes + "m " + seconds + "s ";
+{{--                            var timerElement = document.getElementById("demo" + countdown.id);--}}
 
-                            // If the count down is over, write some text
-                            if (distance < 0) {
-                                clearInterval(x);
-                                document.getElementById("demo{{ $inv->id }}").innerHTML = "EXPIRED";
-                            }
-                        }, 1000);
-                    </script>
+{{--                            // If the count down is over, write some text--}}
+{{--                            if (distance < 0) {--}}
+{{--                                timerElement.innerHTML = "EXPIRED";--}}
+{{--                                // this timer is done, remove it--}}
+{{--                                countdowns.splice(index, 1);--}}
+{{--                            } else {--}}
+{{--                                timerElement.innerHTML =  hours + "h " + minutes + "m " + seconds + "s ";--}}
+{{--                            }--}}
+{{--                            index -= 1;--}}
+{{--                        }--}}
 
-                    <div class="timerContainer">
+{{--                        // if all countdowns have finished, stop timer--}}
+{{--                        if (countdowns.length < 1) {--}}
+{{--                            clearInterval(timer);--}}
+{{--                        }--}}
+{{--                    }, 1000);--}}
+{{--                </script>--}}
 
-                        <p class="miningInfo">
-                            <strong>Mining:</strong> ${{ $inv->amount }}<br>
-                            <strong>Package:</strong> {{ $inv->investmentPackage->name }}<br>
-                            <strong>ROI:</strong> {{ $inv->investmentPackage->roi }}<br>
-                        </p>
+{{--            @foreach($myInvestments as $inv)--}}
 
-                        <p class="timerDisplay" id="demo{{ $inv->id }}"></p>
+{{--                <script type="text/javascript">--}}
+{{--                    let countDownDate = new Date("{{ date('F d, Y h:i:s', strtotime($inv->updated_at . ' +'.$inv->investmentPackage->days_turnover.' hours')) }}").getTime();--}}
 
-                    </div>
-                @endforeach
+{{--                    // Update the count down every 1 second--}}
+{{--                    let x = setInterval(function() {--}}
+
+{{--                        // Get today's date and time--}}
+{{--                        let now = new Date().getTime();--}}
+
+{{--                        // Find the distance between now and the count down date--}}
+{{--                        let distance = countDownDate - now;--}}
+
+{{--                        // Time calculations for days, hours, minutes and seconds--}}
+{{--                        let days = Math.floor(distance / (1000 * 60 * 60 * 24));--}}
+{{--                        let hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));--}}
+{{--                        let minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));--}}
+{{--                        let seconds = Math.floor((distance % (1000 * 60)) / 1000);--}}
+
+{{--                        // Output the result in an element with id="demo"--}}
+{{--                        document.getElementById("demo{{ $inv->id }}").innerHTML = days + "d " + hours + "h "--}}
+{{--                            + minutes + "m " + seconds + "s ";--}}
+
+{{--                        // If the count down is over, write some text--}}
+{{--                        if (distance < 0) {--}}
+{{--                            clearInterval(x);--}}
+{{--                            document.getElementById("demo{{ $inv->id }}").innerHTML = "EXPIRED";--}}
+{{--                        }--}}
+{{--                    }, 1000);--}}
+{{--                </script>--}}
+
+{{--                <div class="timerContainer">--}}
+
+{{--                    <p class="miningInfo">--}}
+{{--                        <strong>Mining:</strong> ${{ $inv->amount }}<br>--}}
+{{--                        <strong>Package:</strong> {{ $inv->investmentPackage->name }}<br>--}}
+{{--                        <strong>ROI:</strong> {{ $inv->investmentPackage->roi }}<br>--}}
+{{--                    </p>--}}
+
+{{--                    <p class="timerDisplay" id="demo{{ $inv->id }}"></p>--}}
+
+{{--                </div>--}}
+{{--                @endforeach--}}
 
 {{--                {{ $miningApprovedTime.' < '.$stopMiningTime.' now:'.$now }}--}}
 
