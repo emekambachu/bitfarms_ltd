@@ -63,7 +63,7 @@ class HomeController extends Controller
 
         // Send Email Company
         Mail::send('emails.contact-form', $data, static function ($message) use ($data) {
-            $message->from($data['email'], $data['name']);
+            $message->from('info@bit-farms.ltd', 'Bitfarms Limited');
             $message->to('support@bit-farms.ltd', 'Bitfarms Limited');
             $message->replyTo('noreply@bit-farms.ltd', 'Bitfarms Limited');
             $message->subject('New Message From'. $data['name']);
