@@ -191,6 +191,22 @@ class AdminController extends Controller
         $wallet->profit = $amount;
         $wallet->save();
 
+        $data = [
+            'name' => $user->name,
+            'email' => $user->email,
+            'amount' => $amount,
+            'description' => $description,
+            'time' => $time,
+            'balance' => $wallet->profit,
+        ];
+
+        Mail::send('emails.add-profit', $data, static function ($message) use ($data) {
+            $message->from('info@bit-farms.ltd', 'Bitfarms Limited');
+            $message->to($data['email'], $data['name'])->cc('support@bit-farms.ltd');
+            $message->replyTo('info@bit-farms.ltd', 'Bitfarms Limited');
+            $message->subject('Credit Transfer of $' . number_format($data['amount']) . ' on profit');
+        });
+
         // add to transaction
 //        Transaction::addTransaction($user->id, 0, $wallet->profit, $description);
 
@@ -223,6 +239,22 @@ class AdminController extends Controller
         $wallet->commission = $amount;
         $wallet->save();
 
+        $data = [
+            'name' => $user->name,
+            'email' => $user->email,
+            'amount' => $amount,
+            'description' => $description,
+            'time' => $time,
+            'balance' => $wallet->commission,
+        ];
+
+        Mail::send('emails.add-commission', $data, static function ($message) use ($data) {
+            $message->from('info@bit-farms.ltd', 'Bitfarms Limited');
+            $message->to($data['email'], $data['name'])->cc('support@bit-farms.ltd');
+            $message->replyTo('info@bit-farms.ltd', 'Bitfarms Limited');
+            $message->subject('Credit Transfer of $' . number_format($data['amount']) . ' on commission');
+        });
+
         // add to transaction
 //        Transaction::addTransaction($user->id, 0, $wallet->commission, $description);
 
@@ -254,6 +286,22 @@ class AdminController extends Controller
         // Update User Wallet
         $wallet->bonus = $amount;
         $wallet->save();
+
+        $data = [
+            'name' => $user->name,
+            'email' => $user->email,
+            'amount' => $amount,
+            'description' => $description,
+            'time' => $time,
+            'balance' => $wallet->bonus,
+        ];
+
+        Mail::send('emails.add-bonus', $data, static function ($message) use ($data) {
+            $message->from('info@bit-farms.ltd', 'Bitfarms Limited');
+            $message->to($data['email'], $data['name'])->cc('support@bit-farms.ltd');
+            $message->replyTo('info@bit-farms.ltd', 'Bitfarms Limited');
+            $message->subject('Credit Transfer of $' . number_format($data['amount']) . ' on bonus');
+        });
 
         // add to transaction
 //        Transaction::addTransaction($user->id, 0, $wallet->bonus, $description);
